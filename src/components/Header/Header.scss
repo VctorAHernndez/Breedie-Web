@@ -1,0 +1,78 @@
+@import '../../App.scss';
+
+.header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $header-side-padding;
+    height: $header-height;
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+
+    .branding {
+
+        display: flex;
+        align-items: center;
+
+        .logo {
+
+            height: $navbar-logos;
+            width: $navbar-logos;
+
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 5px;
+                box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+                background-color: $silhoutte-color;
+            }
+        }
+
+        .breedie-title {
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-left: 0.5rem;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }   
+    }
+
+    .account {
+
+        display: flex;
+        align-items: center;
+
+        .compose-msg {
+            font-size: 1.3rem;
+            margin: 0 1rem;
+            cursor: pointer;
+
+            a {
+                color: inherit;
+            }
+        }
+
+        .profile-picture {
+
+            cursor: pointer;
+            height: $navbar-logos;
+            width: $navbar-logos;
+
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 100%;
+                box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+                background-color: $silhoutte-color;
+            }
+
+        }
+    }
+
+}
+

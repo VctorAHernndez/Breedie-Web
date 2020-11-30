@@ -1,0 +1,102 @@
+@import '../../App.scss';
+@import './Notification.scss';
+
+$action-width: 1.1rem;
+
+.user-comment-card {
+    @extend .notification-card;
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+
+    .action-icon {
+        // height: 100%;
+        // width: $action-width;
+        // background-color: $comment-color;
+        // color: white;
+        width: $action-width;
+        font-size: 3rem;
+    }
+
+    .notification-metadata {
+
+        width: calc(100% - #{$action-width} - 1rem - 5px);
+
+        .notification-description {
+            font-size: 0.9rem;
+
+            .username {
+                font-weight: 700;
+                color: #555;
+                white-space: nowrap;
+            }
+
+            .comment {
+                color: $comment-color;
+                font-style: italic;
+            }
+
+            a {
+                color: $magenta;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .notification-date {
+            font-size: 0.7rem;
+            color: #777;
+            margin-top: 0.5rem;
+            text-align: right;
+        }
+    }
+
+
+
+    // margin-left: auto;
+    // border-left: 5px solid $heart-color;
+    // width: 100%; //$notification-width
+    // background-color: white;
+    // border-radius: 2px;
+    // box-sizing: border-box;
+    // // height: $notification-height;
+    // margin-bottom: 0.8rem;
+    // padding: 1rem;
+    // box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+    // display: flex;
+    // flex-direction: row;
+
+    // // Change Border Color to Gray if Comment
+    // &.comment {
+    //     border-left: 5px solid #777;
+    // }
+
+
+    // .action-icon {
+    //     width: $action-width;
+    //     // height: 100%;
+    //     &#heart {
+    //         color: $heart-color;
+    //     }
+    // }
+
+    // .notification-metadata {
+    //     padding-left: 1rem;
+    //     width: calc(100% - #{$action-width} - 1rem - 5px); // 1rem because of padding
+    //     box-sizing: border-box;
+
+    //     .notification-description {
+    //         font-size: 0.8rem;
+    //         position: relative;
+
+    //         .notification-date {
+    //             position: absolute;
+    //             font-size: 0.7rem;
+    //             color: #777;
+    //             right: 0;
+    //         }
+    //     }
+    // }
+}
