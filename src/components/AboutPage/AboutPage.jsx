@@ -27,7 +27,8 @@ const AboutPage = () => {
           <OutboundLink
             eventLabel="Breedie iOS"
             to="https://apps.apple.com/us/app/breedie/id1492837097"
-            target="_blank">
+            target="_blank"
+          >
             iOS App
           </OutboundLink>
           , <strong>Breedie</strong> was at first developed as a lightweight app that instantly

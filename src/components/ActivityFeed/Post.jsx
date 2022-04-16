@@ -27,7 +27,8 @@ const Post = ({ date, thumbnail, alt, username, caption, likeCount, commentCount
                   height: '1.5rem',
                   borderRadius: '100%',
                   backgroundColor: generateColor(),
-                }}></div>
+                }}
+              />
             </div>
           </div>
         </div>
