@@ -6,8 +6,7 @@ import Main from './components/Main/Main';
 import { Analytics } from './services';
 import './App.scss';
 
-function App() {
-
+const App = () => {
   // Start tracking pageviews/events
   Analytics.initialize();
 
@@ -22,6 +21,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

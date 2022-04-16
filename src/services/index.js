@@ -1,5 +1,3 @@
 import Analytics from './analytics';
 
-export {
-    Analytics
-};
+export { Analytics };

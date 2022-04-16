@@ -1,38 +1,37 @@
 @import '../../App.scss';
 
 .main-section {
-    box-sizing: border-box;
-    display: flex;
-    height: calc(100vh - #{$header-height});
-    margin-left: $sidebar-width;
-    box-shadow: inset 0 8px 3px -3px rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(to bottom, $orange 35%, $magenta);
+  box-sizing: border-box;
+  display: flex;
+  height: calc(100vh - #{$header-height});
+  margin-left: $sidebar-width;
+  box-shadow: inset 0 8px 3px -3px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to bottom, $orange 35%, $magenta);
 
-    .section-panel {
-        box-sizing: border-box;
-        width: calc(100% - #{$ads-width});
-        max-height: 100%;
-        overflow-y: scroll;
-        padding: 1rem 2rem;
-        // box-sizing: border-box;
-        // box-shadow: inset 0 10px 3px -3px rgba(0, 0, 0, 0.1);;
-    
-        &::-webkit-scrollbar,
-        &::-webkit-scrollbar-thumb,
-        &::-webkit-scrollbar-track {
-            display: none;
-            visibility: hidden;
-        }
-    
-    
-        .section-title {
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-    
-            &:first-child {
-                margin-top: 0.8rem; // decrease top margin to that it matches that of the ad cards
-            }
-        }
+  .section-panel {
+    box-sizing: border-box;
+    width: calc(100% - #{$ads-width});
+    max-height: 100%;
+    overflow-y: scroll;
+    padding: 1rem 2rem;
+    // box-sizing: border-box;
+    // box-shadow: inset 0 10px 3px -3px rgba(0, 0, 0, 0.1);;
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb,
+    &::-webkit-scrollbar-track {
+      display: none;
+      visibility: hidden;
     }
+
+    .section-title {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+
+      &:first-child {
+        margin-top: 0.8rem; // decrease top margin to that it matches that of the ad cards
+      }
+    }
+  }
 }

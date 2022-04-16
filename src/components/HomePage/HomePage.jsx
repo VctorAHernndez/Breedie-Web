@@ -6,20 +6,16 @@ import { Analytics } from '../../services';
 // FAKE DATA
 import { activities } from '../../data';
 
-function HomePage() {
+const HomePage = () => {
+  // Record home page visit
+  Analytics.pageview('/');
 
-    // Record home page visit
-    Analytics.pageview('/');
-
-    return (
-        <section className="section-panel">
-            <Explore />
-            <ActivityFeed
-                sectionTitle="Activity Feed"
-                activities={activities}
-            />
-        </section>
-    );
-}
+  return (
+    <section className="section-panel">
+      <Explore />
+      <ActivityFeed sectionTitle="Activity Feed" activities={activities} />
+    </section>
+  );
+};
 
 export default HomePage;

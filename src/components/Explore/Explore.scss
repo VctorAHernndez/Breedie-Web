@@ -1,93 +1,88 @@
 @import '../../App.scss';
 
 .explore-carousel {
+  display: flex;
+  overflow-x: scroll;
+  padding: 0.5rem 0;
 
-    display: flex;
-    overflow-x: scroll;
-    padding: 0.5rem 0;
+  &::-webkit-scrollbar {
+    height: 10px;
+  }
 
-    &::-webkit-scrollbar {
-        height: 10px;
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.8);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.95);
     }
+  }
 
-    &::-webkit-scrollbar-track {
-        background-color: rgba(255, 255, 255, 0.3);
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
-        box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
-    }
+  &::after {
+    // content: '';
+    // width: 100%;
+    // height: 100%;
+    // position: absolute;
+    // right: 0;
+    // background: linear-gradient(to right, transparent 95%, white);
+  }
 
-    &::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.8);
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.95);
-        }
-    }
-    
+  .explore-card {
+    box-sizing: border-box;
+    width: 12rem;
+    background: white;
+    border-radius: 2px;
+    margin-right: 0.8rem;
+    padding: 1rem;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
 
-    &::after {
-        // content: '';
-        // width: 100%;
-        // height: 100%;    
-        // position: absolute;
-        // right: 0;
-        // background: linear-gradient(to right, transparent 95%, white);
-    }
-    
-    .explore-card {
-
-        box-sizing: border-box;
-        width: 12rem;
-        background: white;
+    .card-image {
+      width: 100%;
+      height: 10rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 2px;
-        margin-right: 0.8rem;
-        padding: 1rem;
-        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
-
-        .card-image {
-            width: 100%;
-            height: 10rem;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 2px;
-                background-color: $silhoutte-color;
-            }
-        }
-
-        p {
-            width: 100%;
-            margin: 0.5rem 0;
-            font-size: 0.7rem;
-            font-weight: 600;
-
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .explore-card-icons {
-
-            display: flex;
-            justify-content: space-between;
-            // margin-top: 1rem;
-
-            .explore-actions {
-                .action-icons {
-
-                    cursor: pointer;
-                    margin-right: 0.5rem;
-
-                    &#heart {
-                        color: $heart-color;
-                    }
-                }
-            }
-
-            .post-profile-picture {
-                display: flex;
-                align-items: center;
-            }
-        }
+        background-color: $silhoutte-color;
+      }
     }
+
+    p {
+      width: 100%;
+      margin: 0.5rem 0;
+      font-size: 0.7rem;
+      font-weight: 600;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .explore-card-icons {
+      display: flex;
+      justify-content: space-between;
+      // margin-top: 1rem;
+
+      .explore-actions {
+        .action-icons {
+          cursor: pointer;
+          margin-right: 0.5rem;
+
+          &#heart {
+            color: $heart-color;
+          }
+        }
+      }
+
+      .post-profile-picture {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
 }

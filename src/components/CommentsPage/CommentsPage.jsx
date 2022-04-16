@@ -5,19 +5,15 @@ import { Analytics } from '../../services';
 // FAKE DATA
 import { comments } from '../../data';
 
-function CommentsPage() {
+const CommentsPage = () => {
+  // Record comments page visit
+  Analytics.pageview('/comments');
 
-    // Record comments page visit
-    Analytics.pageview('/comments');
-
-    return (
-        <section className="section-panel">
-            <ActivityFeed 
-                sectionTitle="Your Comments"
-                activities={comments}
-            />
-        </section>
-    );
-}
+  return (
+    <section className="section-panel">
+      <ActivityFeed sectionTitle="Your Comments" activities={comments} />
+    </section>
+  );
+};
 
 export default CommentsPage;

@@ -1,116 +1,104 @@
 @import '../../App.scss';
 
 .sidebar {
+  position: absolute;
+  left: 0;
+  box-sizing: border-box;
+  width: $sidebar-width;
+  height: calc(100% - #{$header-height});
+  min-height: 30rem;
+  background-image: linear-gradient(to left, $magenta 30%, $orange);
+  box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.1); // SPREAD RADIUS AND OFFSET-Y HAVE TO BE THE SAME
+  padding-top: $gradient-border-size;
 
-    position: absolute;
-    left: 0;
+  .sidebar-list {
     box-sizing: border-box;
-    width: $sidebar-width;
-    height: calc(100% - #{$header-height});
-    min-height: 30rem;
-    background-image: linear-gradient(to left, $magenta 30%, $orange);
-    box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.1); // SPREAD RADIUS AND OFFSET-Y HAVE TO BE THE SAME
-    padding-top: $gradient-border-size;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    height: calc(100% - #{$sidebar-extras-height});
+    list-style-type: none;
+    padding-top: 0.9rem;
 
-    .sidebar-list {
+    .sidebar-list-item {
+      padding: 0.6rem $header-side-padding;
 
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        background-color: white;
-        height: calc(100% - #{$sidebar-extras-height});
-        list-style-type: none;
-        padding-top: 0.9rem;
-
-        .sidebar-list-item {
-
-            padding: 0.6rem $header-side-padding;
-
-            .sidebar-link {
-
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                color: #333;
-
-                .sidebar-icon {
-                    margin-right: 0.5rem;
-
-                    &#heart {
-                        color: $heart-color;
-                    }
-
-                    &#user {
-                        color: $user-color;
-                    }
-
-                    &#home {
-                        color: $home-color;
-                    }
-                }
-
-                &:hover {
-                    color: #555;
-                }
-            }
-        }
-    }
-
-
-    .sidebar-extras {
-
-        bottom: 0;
-        margin: 0;
-        padding: 0 0 1rem 0;
-        list-style: none;
-        height: $sidebar-extras-height;
-        box-sizing: border-box;
-        background-color: white;
-        font-size: 0.7rem;
-        text-align: center;
+      .sidebar-link {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
 
-        .sidebar-extras-list-item {
+        .sidebar-icon {
+          margin-right: 0.5rem;
 
-            padding: 0.2rem $header-side-padding;
+          &#heart {
+            color: $heart-color;
+          }
 
-            a {
-                
-                background: -webkit-linear-gradient($magenta, $orange);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                position: relative;
+          &#user {
+            color: $user-color;
+          }
 
-                :hover {
-                    // background: -webkit-linear-gradient($orange, $magenta);
-                }
-
-                // Link Bottom Line
-                &::after {
-
-                    --extra-width: 5px;
-
-                    content: '';
-                    background: $magenta;
-                    position: absolute;
-                    bottom: -1px;
-                    width: 100%;
-                    // width: calc(100% + var(--extra-width));
-                    left: 0;
-                    right: 0;
-                    height: 1px;
-                }
-            }
-
-            #copyright {
-                font-size: 0.7rem;
-            }
+          &#home {
+            color: $home-color;
+          }
         }
 
-        
+        &:hover {
+          color: #555;
+        }
+      }
     }
-    
+  }
+
+  .sidebar-extras {
+    bottom: 0;
+    margin: 0;
+    padding: 0 0 1rem 0;
+    list-style: none;
+    height: $sidebar-extras-height;
+    box-sizing: border-box;
+    background-color: white;
+    font-size: 0.7rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .sidebar-extras-list-item {
+      padding: 0.2rem $header-side-padding;
+
+      a {
+        background: -webkit-linear-gradient($magenta, $orange);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+
+        :hover {
+          // background: -webkit-linear-gradient($orange, $magenta);
+        }
+
+        // Link Bottom Line
+        &::after {
+          --extra-width: 5px;
+
+          content: '';
+          background: $magenta;
+          position: absolute;
+          bottom: -1px;
+          width: 100%;
+          // width: calc(100% + var(--extra-width));
+          left: 0;
+          right: 0;
+          height: 1px;
+        }
+      }
+
+      #copyright {
+        font-size: 0.7rem;
+      }
+    }
+  }
 }

@@ -4,54 +4,49 @@ $profile-card-height: 10rem;
 $profile-card-padding: 1rem;
 
 .profile-card {
+  height: $profile-card-height;
+  background-color: white;
+  border-radius: 2px;
+  display: flex;
+  box-sizing: border-box;
+  padding: $profile-card-padding;
+  margin-top: 0.8rem;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
 
-    height: $profile-card-height;
-    background-color: white;
-    border-radius: 2px;
-    display: flex;
-    box-sizing: border-box;
-    padding: $profile-card-padding;
-    margin-top: 0.8rem;
-    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+  .profile-picture {
+    height: 100%;
+    width: calc(
+      #{$profile-card-height} - 2 * #{$profile-card-padding}
+    ); // subtract 2 times card padding
+    margin-right: 1rem;
 
-    .profile-picture {
-
-        height: 100%;
-        width: calc(#{$profile-card-height} - 2 * #{$profile-card-padding}); // subtract 2 times card padding
-        margin-right: 1rem;
-
-        img {
-            border-radius: 100%;
-            height: 100%;
-            width: 100%;
-            object-fit: cover; // not sure if necessary
-            background-color: $silhoutte-color;
-        }
+    img {
+      border-radius: 100%;
+      height: 100%;
+      width: 100%;
+      object-fit: cover; // not sure if necessary
+      background-color: $silhoutte-color;
     }
+  }
 
-    .username {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #555;
-    }
+  .username {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #555;
+  }
 
-    .join-date {
+  .join-date {
+  }
 
-    }
+  .email {
+  }
 
-    .email {
+  .post-count {
+  }
 
-    }
+  .like-count {
+  }
 
-    .post-count {
-
-    }
-
-    .like-count {
-
-    }
-
-    .comment-count {
-
-    }
+  .comment-count {
+  }
 }
