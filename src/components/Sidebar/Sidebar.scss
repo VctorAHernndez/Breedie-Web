@@ -102,3 +102,10 @@
     }
   }
 }
+
+@media screen and(max-width: $small-breakpoint) {
+  // Hide the sidebar for iPhone 12 Pros
+  .sidebar {
+    display: none;
+  }
+}

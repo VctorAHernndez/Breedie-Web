@@ -109,3 +109,24 @@ $post-height: 10rem;
     }
   }
 }
+
+@media screen and (max-width: $small-breakpoint) {
+  .post-card {
+    height: initial;
+    flex-direction: column;
+
+    .card-image {
+      width: 100%;
+      margin-bottom: 0.5rem;
+
+      img {
+        max-height: 8rem;
+      }
+    }
+
+    .post-info {
+      padding-left: 0;
+      width: 100%;
+    }
+  }
+}

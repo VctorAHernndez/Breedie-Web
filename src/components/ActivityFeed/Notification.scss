@@ -49,3 +49,15 @@ $notification-width: 90%;
     }
   }
 }
+
+@media screen and (max-width: $small-breakpoint) {
+  .notification-card {
+    height: initial;
+    width: 100%;
+    .notification-metadata {
+      .notification-date {
+        display: none;
+      }
+    }
+  }
+}
