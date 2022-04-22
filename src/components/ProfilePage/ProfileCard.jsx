@@ -1,7 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import './ProfileCard.scss';
+import React from 'react';
+
 import { parseDate } from '../../utils';
+
+import './ProfileCard.scss';
 
 const ProfileCard = ({ username, src, dateJoined, email }) => {
   const parsedDate = parseDate(dateJoined);

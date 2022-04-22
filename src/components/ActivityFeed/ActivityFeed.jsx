@@ -1,5 +1,6 @@
-import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
+import React, { lazy, Suspense } from 'react';
+
 import './ActivityFeed.scss';
 
 const Post = lazy(() => import('./Post'));

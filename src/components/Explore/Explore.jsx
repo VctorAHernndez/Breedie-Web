@@ -1,8 +1,9 @@
 import React, { Suspense, lazy } from 'react';
-import './Explore.scss';
 
 // FAKE POSTS
 import cards from '../../data/cards';
+
+import './Explore.scss';
 
 const ExploreCard = lazy(() => import('./ExploreCard'));
 

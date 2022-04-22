@@ -1,9 +1,9 @@
 import React from 'react';
-import ActivityFeed from '../ActivityFeed/ActivityFeed';
-import { Analytics } from '../../services';
 
 // FAKE DATA
 import { activities } from '../../data';
+import { Analytics } from '../../services';
+import ActivityFeed from '../ActivityFeed/ActivityFeed';
 
 const LikesPage = () => {
   // Filter notifications out from the fake data

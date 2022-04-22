@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Analytics } from '../../services';
+
 import './TermsPage.scss';
 
 const TermsPage = () => {

@@ -1,7 +1,9 @@
 import React from 'react';
 import { OutboundLink } from 'react-ga';
+
 import logo from '../../images/logo.png';
 import { Analytics } from '../../services';
+
 import './AboutPage.scss';
 
 const AboutPage = () => {

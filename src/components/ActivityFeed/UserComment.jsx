@@ -1,9 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { FiAlignLeft } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+
 import { parseDate } from '../../utils';
-import PropTypes from 'prop-types';
+
 import './UserComment.scss';
 
 const UserComment = ({ date, comment, username, postId }) => {

@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { FiEdit } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import logo from '../../images/logo.png';
-import './Header.scss';
 
 // FAKE DATA
 import { user } from '../../data';
+import logo from '../../images/logo.png';
+
+import './Header.scss';
 
 const Header = ({ loggedIn }) => {
   return (

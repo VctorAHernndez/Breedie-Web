@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Ads.scss';
 
 // FAKE DATA

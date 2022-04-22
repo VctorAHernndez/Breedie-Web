@@ -1,10 +1,11 @@
 import React from 'react';
-import ProfileCard from './ProfileCard';
-import ActivityFeed from '../ActivityFeed/ActivityFeed';
-import { Analytics } from '../../services';
 
 // FAKE DATA
 import { activities, user } from '../../data';
+import { Analytics } from '../../services';
+import ActivityFeed from '../ActivityFeed/ActivityFeed';
+
+import ProfileCard from './ProfileCard';
 
 const ProfilePage = () => {
   // Filter out the notifications from fake data

@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { IconContext } from 'react-icons';
 import { FiHeart, FiAlignLeft } from 'react-icons/fi';
-import PropTypes from 'prop-types';
+
 import './Post.scss';
 
 // TODO: Later change generateColor for profilepics
@@ -9,6 +10,10 @@ import { generateColor, parseDate } from '../../utils';
 
 const Post = ({ date, thumbnail, alt, username, caption, likeCount, commentCount }) => {
   const parsedDate = parseDate(date);
+
+  // TODO: actually detect if the user liked and/or commented on this post
+  const userLikedThisPost = Math.random() > 0.5;
+  const userCommentedOnThisPost = Math.random() > 0.5;
 
   return (
     <div className="post-card">
@@ -38,11 +43,16 @@ const Post = ({ date, thumbnail, alt, username, caption, likeCount, commentCount
         <div className="post-metadata">
           <div className="post-date">{parsedDate}</div>
           <div className="post-actions">
-            <IconContext.Provider value={{ className: 'action-icons' }}>
+            <IconContext.Provider
+              value={{ className: userLikedThisPost ? 'action-icons liked' : 'action-icons' }}
+            >
               <FiHeart id="heart" />
             </IconContext.Provider>
             <div id="like-count">{likeCount}</div>
-            <IconContext.Provider value={{ className: 'action-icons' }}>
+            {/* TODO: figure out how to indicate that the user has commented on the post */}
+            <IconContext.Provider
+              value={{ className: userCommentedOnThisPost ? 'action-icons' : 'action-icons' }}
+            >
               <FiAlignLeft id="comment" />
             </IconContext.Provider>
             <div id="comment-count">{commentCount}</div>

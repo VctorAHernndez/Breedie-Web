@@ -1,65 +1,69 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { IconContext } from 'react-icons';
-import {
-  FiEdit,
-  FiHome,
-  FiUser,
-  FiHeart,
-  FiAlignLeft,
-  // FiHelpCircle,
-  // FiFlag,
-} from 'react-icons/fi';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { IconContext } from 'react-icons';
+import { FaRegComment } from 'react-icons/fa';
+import { FiHome, FiUser, FiHeart } from 'react-icons/fi';
+import { matchPath } from 'react-router';
+import { Link, useLocation } from 'react-router-dom';
 
 import './Sidebar.scss';
 
+const SIDEBAR_LINKS = [
+  {
+    linkPathname: '/',
+    linkText: 'Home',
+    iconId: 'home',
+    iconComponent: FiHome,
+  },
+  {
+    linkPathname: '/profile',
+    linkText: 'Profile',
+    iconId: 'user',
+    iconComponent: FiUser,
+  },
+  {
+    linkPathname: '/likes',
+    linkText: 'Likes',
+    iconId: 'heart',
+    iconComponent: FiHeart,
+  },
+  {
+    linkPathname: '/comments',
+    linkText: 'Comments',
+    iconId: 'comments',
+    iconComponent: FaRegComment,
+  },
+];
+
 const Sidebar = ({ loggedIn }) => {
+  const { pathname } = useLocation();
+
+  if (!loggedIn) {
+    return null;
+  }
+
   return (
     <nav className="sidebar">
       <ul className="sidebar-list">
-        {loggedIn && (
-          <li className="sidebar-list-item">
-            <Link className="sidebar-link" to="/new">
-              <IconContext.Provider value={{ className: 'sidebar-icon' }}>
-                <FiEdit />
-              </IconContext.Provider>
-              <span>New Post</span>
-            </Link>
-          </li>
-        )}
-        <li className="sidebar-list-item">
-          <Link className="sidebar-link" to="/">
-            <IconContext.Provider value={{ className: 'sidebar-icon' }}>
-              <FiHome id="home" />
-            </IconContext.Provider>
-            <span>Home</span>
-          </Link>
-        </li>
-        <li className="sidebar-list-item">
-          <Link className="sidebar-link" to="/profile">
-            <IconContext.Provider value={{ className: 'sidebar-icon' }}>
-              <FiUser id="user" />
-            </IconContext.Provider>
-            <span>Profile</span>
-          </Link>
-        </li>
-        <li className="sidebar-list-item">
-          <Link className="sidebar-link" to="/likes">
-            <IconContext.Provider value={{ className: 'sidebar-icon' }}>
-              <FiHeart id="heart" />
-            </IconContext.Provider>
-            <span>Likes</span>
-          </Link>
-        </li>
-        <li className="sidebar-list-item">
-          <Link className="sidebar-link" to="/comments">
-            <IconContext.Provider value={{ className: 'sidebar-icon' }}>
-              <FiAlignLeft />
-            </IconContext.Provider>
-            <span>Comments</span>
-          </Link>
-        </li>
+        {SIDEBAR_LINKS.map(({ linkPathname, linkText, iconComponent: IconComponent, iconId }) => {
+          const isSectionActive = !!matchPath(pathname, { path: linkPathname, exact: true });
+          return (
+            <li className="sidebar-list-item" key={linkPathname}>
+              <Link
+                className={classNames('sidebar-link', isSectionActive && 'active')}
+                to={linkPathname}
+              >
+                <span className="icon-container">
+                  <IconContext.Provider value={{ className: 'sidebar-icon', size: 16 }}>
+                    <IconComponent id={iconId} />
+                  </IconContext.Provider>
+                </span>
+                <span className="sidebar-link-text">{linkText}</span>
+              </Link>
+            </li>
+          );
+        })}
         {/* <li className="sidebar-list-item">
           <Link className="sidebar-link" to="/faq">
             <IconContext.Provider value={{ className: "sidebar-icon" }}>

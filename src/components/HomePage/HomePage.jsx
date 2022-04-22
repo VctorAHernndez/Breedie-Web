@@ -1,10 +1,10 @@
 import React from 'react';
-import Explore from '../Explore/Explore';
-import ActivityFeed from '../ActivityFeed/ActivityFeed';
-import { Analytics } from '../../services';
 
 // FAKE DATA
 import { activities } from '../../data';
+import { Analytics } from '../../services';
+import ActivityFeed from '../ActivityFeed/ActivityFeed';
+import Explore from '../Explore/Explore';
 
 const HomePage = () => {
   // Record home page visit

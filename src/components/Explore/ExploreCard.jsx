@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { IconContext } from 'react-icons';
 import { FiHeart, FiAlignLeft } from 'react-icons/fi';
-import PropTypes from 'prop-types';
+
 import './Explore.scss';
 
 // Generate Fake Profile Pics

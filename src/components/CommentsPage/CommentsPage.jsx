@@ -1,9 +1,9 @@
 import React from 'react';
-import ActivityFeed from '../ActivityFeed/ActivityFeed';
-import { Analytics } from '../../services';
 
-// FAKE DATA
+// FAKE COMMENTS
 import { comments } from '../../data';
+import { Analytics } from '../../services';
+import ActivityFeed from '../ActivityFeed/ActivityFeed';
 
 const CommentsPage = () => {
   // Record comments page visit

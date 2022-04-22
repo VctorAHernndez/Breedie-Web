@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React, { Suspense, lazy } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
 import './Main.scss';
 
 // Lazy Load Timeline, Ads, and other main parts
