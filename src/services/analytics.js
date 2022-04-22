@@ -1,15 +1,15 @@
-import ReactGA from 'react-ga';
+import { initialize, pageview, modalview, event } from 'react-ga';
 
 // TODO: refactor initialization
 const Analytics = {
   initialize: () =>
-    ReactGA.initialize('UA-171584531-1', {
+    initialize('UA-171584531-1', {
       debug: true,
       siteSpeedSampleRate: 100,
     }),
-  pageview: (path) => ReactGA.pageview(path), // window.location.pathname
-  modalview: (modalName) => ReactGA.modalview(modalName),
-  event: (category, action) => ReactGA.event({ category, action }),
+  pageview: (path) => pageview(path), // window.location.pathname
+  modalview: (modalName) => modalview(modalName),
+  event: (category, action) => event({ category, action }),
 };
 
 /* ModalView */

@@ -1,14 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+
 import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
-import { Analytics } from './services';
+import Sidebar from './components/Sidebar/Sidebar';
+
 import './App.scss';
 
 const App = () => {
-  // Start tracking pageviews/events
-  Analytics.initialize();
+  // TODO: Start tracking pageviews/events
+  // Analytics.initialize();
 
   const loggedIn = true;
 

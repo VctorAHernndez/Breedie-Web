@@ -1,7 +1,7 @@
 import activities from './activities';
-import comments from './comments';
-import cards from './cards';
-import user from './user';
 import ads from './ads';
+import cards from './cards';
+import comments from './comments';
+import user from './user';
 
 export { activities, comments, cards, user, ads };
