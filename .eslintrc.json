@@ -30,6 +30,13 @@
       }
     ],
     "no-multiple-empty-lines": "error",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
     "import/first": "error",
     "import/no-unresolved": "off",
     "import/order": [
