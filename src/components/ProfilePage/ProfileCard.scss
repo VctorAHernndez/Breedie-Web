@@ -8,7 +8,6 @@ $profile-card-padding: 1rem;
   background-color: white;
   border-radius: 2px;
   display: flex;
-  box-sizing: border-box;
   padding: $profile-card-padding;
   margin-top: 0.8rem;
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
@@ -35,18 +34,19 @@ $profile-card-padding: 1rem;
     color: #555;
   }
 
-  .join-date {
-  }
+  // TODO: style ProfileCard
+  // .join-date {
+  // }
 
-  .email {
-  }
+  // .email {
+  // }
 
-  .post-count {
-  }
+  // .post-count {
+  // }
 
-  .like-count {
-  }
+  // .like-count {
+  // }
 
-  .comment-count {
-  }
+  // .comment-count {
+  // }
 }

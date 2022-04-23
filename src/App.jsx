@@ -17,8 +17,10 @@ const App = () => {
     <Router>
       <div className="App">
         <Header loggedIn={loggedIn} />
-        <Sidebar loggedIn={loggedIn} />
-        <Main loggedIn={loggedIn} />
+        <div>
+          <Sidebar loggedIn={loggedIn} />
+          <Main loggedIn={loggedIn} />
+        </div>
       </div>
     </Router>
   );

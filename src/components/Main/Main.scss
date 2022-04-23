@@ -1,21 +1,18 @@
 @import '../../App.scss';
 
 .main-section {
-  box-sizing: border-box;
   display: flex;
   height: calc(100vh - #{$header-height});
-  margin-left: $sidebar-width;
   box-shadow: inset 0 8px 3px -3px rgba(0, 0, 0, 0.1);
   background-image: linear-gradient(to bottom, $orange 35%, $magenta);
+  max-width: calc(100vw - #{$sidebar-lg-width});
+  width: 100%;
 
   .section-panel {
-    box-sizing: border-box;
     width: calc(100% - #{$ads-width});
     max-height: 100%;
     overflow-y: scroll;
     padding: 1rem 2rem;
-    // box-sizing: border-box;
-    // box-shadow: inset 0 10px 3px -3px rgba(0, 0, 0, 0.1);;
 
     &::-webkit-scrollbar,
     &::-webkit-scrollbar-thumb,
@@ -26,19 +23,21 @@
 
     .section-title {
       color: white;
-      font-size: 2rem;
+      margin-top: 0.5rem;
       margin-bottom: 0.5rem;
-
-      &:first-child {
-        margin-top: 0.8rem; // decrease top margin to that it matches that of the ad cards
-      }
     }
+  }
+}
+
+@media screen and(max-width: $medium-breakpoint) {
+  .main-section {
+    max-width: calc(100vw - #{$sidebar-md-width});
   }
 }
 
 @media screen and(max-width: $small-breakpoint) {
   // Take over the room the Sidebar left empty
   .main-section {
-    margin-left: 0;
+    max-width: 100vw;
   }
 }

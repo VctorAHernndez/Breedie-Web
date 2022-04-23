@@ -1,14 +1,14 @@
 @import '../../App.scss';
 
 $post-height: 10rem;
+$post-border-radius: 2px;
 
 .post-card {
   width: 100%;
   background-color: white;
-  border-radius: 2px;
-  box-sizing: border-box;
+  border-radius: $post-border-radius;
   height: $post-height;
-  margin-bottom: 0.8rem;
+  margin-bottom: $margin-between-posts;
   padding: 1rem;
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -17,54 +17,53 @@ $post-height: 10rem;
   .card-image {
     height: 100%;
     width: calc(#{$post-height} + 3rem);
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 2px;
+      border-radius: $post-border-radius;
       background-color: $silhoutte-color;
     }
   }
 
   .post-info {
-    padding-left: 1rem;
+    margin-left: 1rem;
     width: calc(100% - #{$post-height} - 3rem);
-    box-sizing: border-box;
 
     .post-profile {
-      justify-content: flex-end;
       display: flex;
       flex-direction: row;
+      justify-content: flex-end;
       align-items: center;
+
+      // Space between user details and post caption
+      margin-bottom: 0.25rem;
 
       .username {
         font-size: 0.9rem;
         font-weight: 700;
         color: #555;
+
+        // Space between username and user's profile picture
         margin-right: 0.5rem;
       }
     }
 
     .post-caption {
-      width: 95%;
       height: 4rem;
       font-size: 0.75rem;
       font-weight: 500;
-      margin-top: 0.5rem;
-      white-space: pre-wrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      position: relative;
 
-      &::after {
-        content: '';
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 55%, white);
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 0;
-      }
+      // Space between post caption and post metadata
+      margin-bottom: 0.5rem;
+
+      // Ellipses for modern browsers
+      // See: https://stackoverflow.com/questions/17028911/text-overflow-ellipsis-without-white-space-nowrap
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
     }
 
     .post-metadata {
@@ -72,11 +71,11 @@ $post-height: 10rem;
       flex-direction: row;
       justify-content: space-between;
       align-content: center;
-      padding-top: 0.5rem;
 
       .post-date {
         font-size: 0.7rem;
         color: #777;
+        white-space: nowrap;
       }
 
       .post-actions {
@@ -86,13 +85,17 @@ $post-height: 10rem;
         .action-icons {
           cursor: pointer;
 
+          // Space between each icon,
+          // leaving out the last icon's margin
           &:not(:last-child) {
-            // remove margin from comments part
             margin-right: 0.5rem;
           }
 
           &#heart {
             color: $heart-color;
+            &.liked {
+              fill: $heart-color;
+            }
           }
 
           & + #like-count,
@@ -110,7 +113,7 @@ $post-height: 10rem;
   }
 }
 
-@media screen and (max-width: $small-breakpoint) {
+@media screen and (max-width: $medium-breakpoint) {
   .post-card {
     height: initial;
     flex-direction: column;
@@ -125,7 +128,7 @@ $post-height: 10rem;
     }
 
     .post-info {
-      padding-left: 0;
+      margin-left: 0;
       width: 100%;
     }
   }

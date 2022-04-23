@@ -8,15 +8,20 @@
   height: $header-height;
   width: 100%;
   background-color: white;
-  box-sizing: border-box;
+
+  // TODO: clean this up
+  // Give the Sidebar and Main sections a flex contianer
+  &+ div {
+    display: flex;
+  }
 
   .branding {
     display: flex;
     align-items: center;
 
     .logo {
-      height: $navbar-logos;
-      width: $navbar-logos;
+      height: $navbar-logo-size;
+      width: $navbar-logo-size;
 
       img {
         height: 100%;
@@ -55,8 +60,8 @@
 
     .profile-picture {
       cursor: pointer;
-      height: $navbar-logos;
-      width: $navbar-logos;
+      height: $navbar-logo-size;
+      width: $navbar-logo-size;
 
       img {
         height: 100%;

@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { IconContext } from 'react-icons';
 import { FaRegComment } from 'react-icons/fa';
 import { FiHome, FiUser, FiHeart } from 'react-icons/fi';
 import { matchPath } from 'react-router';
@@ -54,11 +53,7 @@ const Sidebar = ({ loggedIn }) => {
                 className={classNames('sidebar-link', isSectionActive && 'active')}
                 to={linkPathname}
               >
-                <span className="icon-container">
-                  <IconContext.Provider value={{ className: 'sidebar-icon', size: 16 }}>
-                    <IconComponent id={iconId} />
-                  </IconContext.Provider>
-                </span>
+                <IconComponent id={iconId} className="sidebar-icon" />
                 <span className="sidebar-link-text">{linkText}</span>
               </Link>
             </li>

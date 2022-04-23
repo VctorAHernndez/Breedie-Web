@@ -1,7 +1,6 @@
 @import '../../App.scss';
 
 .ads-section {
-  box-sizing: border-box;
   width: $ads-width;
   height: 100%;
   overflow: scroll;
@@ -10,7 +9,6 @@
   flex-direction: column;
 
   .ad-card {
-    box-sizing: border-box;
     width: 90%;
     background: white;
     border-radius: 2px;

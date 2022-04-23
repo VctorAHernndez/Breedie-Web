@@ -1,37 +1,43 @@
 @import '../../App.scss';
 
+$sidebar-colored-border-height: 2px;
+
 .sidebar {
-  position: absolute;
-  left: 0;
-  box-sizing: border-box;
-  width: $sidebar-width;
-  height: calc(100% - #{$header-height});
+  width: $sidebar-lg-width;
+  height: calc(100vh - #{$header-height});
   min-height: 30rem;
-  background-image: linear-gradient(to left, $magenta 30%, $orange);
-  box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.1); // SPREAD RADIUS AND OFFSET-Y HAVE TO BE THE SAME
-  padding-top: $gradient-border-size;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  // Top border with linear-gradient
+  // See: https://stackoverflow.com/questions/5706963/possible-to-use-border-radius-together-with-a-border-image-which-has-a-gradient
+  position: relative;
+  margin-top: $sidebar-colored-border-height;
+  &::after {
+    content: '';
+    position: absolute;
+    height: $sidebar-colored-border-height;
+    top: -$sidebar-colored-border-height;
+    width: 100%;
+    background-image: linear-gradient(to left, $magenta 30%, $orange);
+  }
 
   .sidebar-list {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    height: calc(100% - #{$sidebar-extras-height});
-    list-style-type: none;
-    padding-top: 0.9rem;
+    width: 100%;
 
     .sidebar-list-item {
-      padding: 0.6rem $header-side-padding;
-
+      width: 100%;
       .sidebar-link {
         display: flex;
         align-items: center;
         text-decoration: none;
         color: #333;
+        padding: 0.8rem $header-side-padding;
+        transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
 
         .sidebar-icon {
           margin-right: 0.5rem;
-
           &#heart {
             color: $heart-color;
           }
@@ -43,28 +49,54 @@
           &#home {
             color: $home-color;
           }
+
+          &#comments {
+            color: $comment-color;
+          }
+        }
+
+        .sidebar-link-text {
+          font-size: 0.9rem;
+          white-space: nowrap;
         }
 
         &:hover {
+          background-color: #ddd;
           color: #555;
+        }
+
+        &.active {
+          background-color: #aaa;
+          color: #555;
+
+          .sidebar-icon {
+            &#heart {
+              fill: $heart-color;
+            }
+
+            &#user {
+              fill: $user-color;
+            }
+
+            &#home {
+              fill: $home-color;
+            }
+
+            // TODO: this fill isn't working with FaRegComment
+            &#comments {
+              fill: $comment-color;
+            }
+          }
         }
       }
     }
   }
 
   .sidebar-extras {
-    bottom: 0;
-    margin: 0;
-    padding: 0 0 1rem 0;
-    list-style: none;
-    height: $sidebar-extras-height;
-    box-sizing: border-box;
-    background-color: white;
+    padding: 0;
+    margin-bottom: 1rem;
     font-size: 0.7rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
 
     .sidebar-extras-list-item {
       padding: 0.2rem $header-side-padding;
@@ -76,20 +108,14 @@
         -webkit-text-fill-color: transparent;
         position: relative;
 
-        :hover {
-          // background: -webkit-linear-gradient($orange, $magenta);
-        }
-
         // Link Bottom Line
         &::after {
-          --extra-width: 5px;
 
           content: '';
           background: $magenta;
           position: absolute;
           bottom: -1px;
           width: 100%;
-          // width: calc(100% + var(--extra-width));
           left: 0;
           right: 0;
           height: 1px;
@@ -103,8 +129,27 @@
   }
 }
 
+// Remove the text from the sidebar for medium breakpoints
+@media screen and(max-width: $medium-breakpoint) {
+  .sidebar {
+    width: $sidebar-md-width;
+    .sidebar-list .sidebar-list-item .sidebar-link {
+      justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+
+      .sidebar-icon {
+        margin-right: 0;
+      }
+      .sidebar-link-text {
+        display: none;
+      }
+    }
+  }
+}
+
+// Hide the sidebar for small breakpoints
 @media screen and(max-width: $small-breakpoint) {
-  // Hide the sidebar for iPhone 12 Pros
   .sidebar {
     display: none;
   }

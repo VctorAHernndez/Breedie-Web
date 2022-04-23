@@ -10,9 +10,8 @@ $notification-width: 90%;
   width: $notification-width;
   background-color: white;
   border-radius: 2px;
-  box-sizing: border-box;
   height: $notification-height;
-  margin-bottom: 0.8rem;
+  margin-bottom: $margin-between-posts;
   padding: 1rem;
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -34,7 +33,6 @@ $notification-width: 90%;
   .notification-metadata {
     padding-left: 1rem;
     width: calc(100% - #{$action-width} - 1rem - 5px); // 1rem because of padding
-    box-sizing: border-box;
 
     .notification-description {
       font-size: 0.8rem;
