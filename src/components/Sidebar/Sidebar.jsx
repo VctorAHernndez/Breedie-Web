@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FaRegComment } from 'react-icons/fa';
-import { FiHome, FiUser, FiHeart } from 'react-icons/fi';
+import { FiHome, FiUser, FiHeart, FiHelpCircle } from 'react-icons/fi';
 import { matchPath } from 'react-router';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -33,6 +33,12 @@ const SIDEBAR_LINKS = [
     iconId: 'comments',
     iconComponent: FaRegComment,
   },
+  {
+    linkPathname: '/about',
+    linkText: 'FAQ',
+    iconId: 'faq',
+    iconComponent: FiHelpCircle,
+  },
 ];
 
 const Sidebar = ({ loggedIn }) => {
@@ -59,35 +65,10 @@ const Sidebar = ({ loggedIn }) => {
             </li>
           );
         })}
-        {/* <li className="sidebar-list-item">
-          <Link className="sidebar-link" to="/faq">
-            <IconContext.Provider value={{ className: "sidebar-icon" }}>
-              <FiHelpCircle />
-            </IconContext.Provider>
-            <span>FAQ</span>
-          </Link>
-        </li> */}
-        {/* <li className="sidebar-list-item">
-          <Link className="sidebar-link" href="/report">
-            <IconContext.Provider value={{ className: "sidebar-icon" }}>
-              <FiFlag />
-            </IconContext.Provider>
-            <span>Report</span>
-          </Link>
-        </li> */}
       </ul>
       <ul className="sidebar-extras">
         <li className="sidebar-extras-list-item">
-          <Link to="/about">About</Link>
-        </li>
-        <li className="sidebar-extras-list-item">
-          <Link to="/api">API</Link>
-        </li>
-        <li className="sidebar-extras-list-item">
           <Link to="/terms">Terms</Link>
-        </li>
-        <li className="sidebar-extras-list-item">
-          <p id="copyright">Copyright &copy; Nández</p>
         </li>
       </ul>
     </nav>

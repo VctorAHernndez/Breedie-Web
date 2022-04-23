@@ -44,11 +44,6 @@ const Main = ({ loggedIn }) => {
           <AboutPage />
         </Suspense>
       </Route>
-      <Route path="/api">
-        <div className="section-panel">
-          <div className="section-title">Coming Soon...</div>
-        </div>
-      </Route>
       <Route path="/terms">
         <Suspense fallback={<div className="section-panel">Loading Terms...</div>}>
           <TermsPage />

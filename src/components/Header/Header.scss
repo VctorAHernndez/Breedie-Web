@@ -11,7 +11,7 @@
 
   // TODO: clean this up
   // Give the Sidebar and Main sections a flex contianer
-  &+ div {
+  & + div {
     display: flex;
   }
 

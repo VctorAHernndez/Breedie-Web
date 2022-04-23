@@ -1,5 +1,13 @@
 @import '../../App.scss';
 
+.new-tag {
+  cursor: default;
+  background-color: darken($silhoutte-color, 8);
+  padding: 0 0.3rem;
+  border-radius: 2px;
+  color: $magenta;
+}
+
 .about-card {
   background-color: white;
   border-radius: 2px;
@@ -7,10 +15,11 @@
   padding: 2rem;
 
   .about-header {
-    margin: 0 auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-bottom: 2rem;
-    width: 80%;
     display: flex;
+    align-items: center;
     flex-direction: row;
 
     .logo {
@@ -27,34 +36,46 @@
       }
     }
 
-    h2,
-    h3 {
-      font-weight: 600;
-      margin-bottom: 0;
-    }
+    .headlines {
+      h2,
+      h3 {
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
 
-    h3 {
-      // margin-top: 1rem;
-      color: $orange;
-      &:nth-child(3) {
-        color: $magenta;
+      h3 {
+        color: $orange;
+
+        &:nth-child(3) {
+          color: $magenta;
+        }
       }
     }
   }
 
+  .intro-paragraph {
+    margin-bottom: 1rem;
+  }
+
+  .feature-list-anouncement {
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-list {
+    margin-bottom: 5rem;
+  }
+
+  .charity-paragraph {
+    margin-bottom: 0.5rem;
+  }
+
   a {
-    text-decoration: none;
     color: $magenta;
+    text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
-  }
-
-  sup {
-    background-color: darken($silhoutte-color, 8);
-    padding: 0 0.3rem;
-    border-radius: 2px;
-    color: $magenta;
   }
 
   small {
@@ -62,6 +83,26 @@
   }
 
   ul {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    list-style-type: disc;
     color: darken($comment-color, 10);
+  }
+}
+
+@media screen and (max-width: $medium-breakpoint) {
+  .about-card .about-header {
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: column;
+
+    .logo {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .headlines {
+      text-align: center;
+    }
   }
 }

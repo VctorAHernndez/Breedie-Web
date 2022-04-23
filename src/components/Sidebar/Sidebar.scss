@@ -28,6 +28,7 @@ $sidebar-colored-border-height: 2px;
 
     .sidebar-list-item {
       width: 100%;
+
       .sidebar-link {
         display: flex;
         align-items: center;
@@ -38,6 +39,7 @@ $sidebar-colored-border-height: 2px;
 
         .sidebar-icon {
           margin-right: 0.5rem;
+
           &#heart {
             color: $heart-color;
           }
@@ -93,9 +95,8 @@ $sidebar-colored-border-height: 2px;
   }
 
   .sidebar-extras {
-    padding: 0;
     margin-bottom: 1rem;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-align: center;
 
     .sidebar-extras-list-item {
@@ -110,7 +111,6 @@ $sidebar-colored-border-height: 2px;
 
         // Link Bottom Line
         &::after {
-
           content: '';
           background: $magenta;
           position: absolute;
@@ -121,10 +121,6 @@ $sidebar-colored-border-height: 2px;
           height: 1px;
         }
       }
-
-      #copyright {
-        font-size: 0.7rem;
-      }
     }
   }
 }
@@ -133,6 +129,7 @@ $sidebar-colored-border-height: 2px;
 @media screen and(max-width: $medium-breakpoint) {
   .sidebar {
     width: $sidebar-md-width;
+
     .sidebar-list .sidebar-list-item .sidebar-link {
       justify-content: center;
       padding-left: 0;
@@ -141,9 +138,14 @@ $sidebar-colored-border-height: 2px;
       .sidebar-icon {
         margin-right: 0;
       }
+
       .sidebar-link-text {
         display: none;
       }
+    }
+
+    .sidebar-extras {
+      display: none;
     }
   }
 }
