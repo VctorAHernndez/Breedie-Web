@@ -4,6 +4,8 @@
 
 A proof-of-concept for a social media website for dogs. [Live Demo](https://breedie.netlify.app).
 
+<img width="1593" alt="Screen Shot 2022-04-15 at 1 44 41 PM" src="https://user-images.githubusercontent.com/54184827/186548494-f2c5dc9e-b2e7-4d8c-9928-fadc44f9721a.png">
+
 ## Available Scripts
 
 In the project directory, you can run:
